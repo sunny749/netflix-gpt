@@ -12,6 +12,7 @@
 # Features
 - Login Page
     - Sign in / Sign up form
+        -form validation for sign in/sign up
     - after sign in redirected to Browse page
 
 - Browse page(only after authentication)
