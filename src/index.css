@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-.backImg{
-  width: 100%;
-  clip-path: polygon(0 0%, 70% 0%, 70% 70%, 0 70%);
+input:-webkit-autofill,
+input:-webkit-autofill:enabled,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:enabled,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:enabled,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+-webkit-text-fill-color: #fff;
+box-shadow: 0 0 0px 1000px rgba(0,0,0, 0.9) inset;
+background-color: black;
 }

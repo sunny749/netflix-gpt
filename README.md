@@ -8,6 +8,15 @@
     - sign in/ sign up form
 - Body page created and create routes in Body page using react-router-dom
 - render Body inside the App
+- Firebase setup
+- Diploying our app to production
+- Create sign up account using firebase
+- Create sign in account using firebase
+- Created redux-toolkit store and userSlice
+- Implemented sign out
+- Updated the authentication state with full name
+- Implemented the feature when use only alow to browse page when login
+- When user is not login then user can't go to browse page redirected to login page
 
 # Features
 - Login Page
