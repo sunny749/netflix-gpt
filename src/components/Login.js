@@ -6,6 +6,7 @@ import {auth} from '../utils/firebase'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { BackGroundImg, User_Avatar } from '../utils/constants';
 
 const Login = () => {
   const navigate=useNavigate()
@@ -80,7 +81,7 @@ const Login = () => {
         const user = userCredential.user;
         updateProfile(user,{
           displayName:form['fullname'][0],
-          photoURL:'https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.webp'
+          photoURL:User_Avatar
         }).then(()=>{
           const {uid,email,passowrd,photoURL,displayName} = auth.currentUser;
           dispatch(addUser({uid,email,passowrd,photoURL,displayName}))
@@ -105,7 +106,7 @@ const Login = () => {
         <div
     className="absolute inset-0  w-[144%] h-[144%] min-h-[1000px] bg-cover bg-top-left"
     style={{
-      backgroundImage: 'url(https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg)',
+      backgroundImage: `url(${BackGroundImg})`,
     }}
     
   ></div>

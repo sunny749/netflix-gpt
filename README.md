@@ -17,7 +17,21 @@
 - Updated the authentication state with full name
 - Implemented the feature when use only alow to browse page when login
 - When user is not login then user can't go to browse page redirected to login page
-
+- unsubscribed onAuthStateChange when unmounting the header page
+- Added hard coded values to constants file
+- Rejistared and created new app in TMDB wesit and get Access token
+- Get Data from TMDB using now playing movies list Api
+- Created mainContainer and secondary container inside browse page
+- Created movies slice
+- and inside maincontainer created two more container for title and videobackground
+- Created custom hook for fetching data and return the data.results
+- inside brouse page using custom hook and get data and update movies inside store
+- inside main container get the movies from store
+- and pass the first move id and title to child components 
+- created new slice for trailer and update the 
+- useing fetch hook we get the results of videos of the first movie and update store
+- and filter the trailer video and embedded the youtube video and make it autoplay 
+- Apply tailwind class to VideoBackground and Videotitle to look awesome 
 # Features
 - Login Page
     - Sign in / Sign up form
