@@ -4,14 +4,13 @@ import VideoBackground from './VideoBackground'
 import VideoTitle from './VideoTitle'
 
 const MainContainer = () => {
-    const movies=useSelector(state=>state.movies?.nowPlayingMovies) 
+    const movies=useSelector(state=>state.movies.nowPlayingMovies) 
     if(movies===null) return
-    const mainMove=movies[0]
-    console.log(movies)
-    const {original_title, overview ,id }=mainMove
+    const mainMovie=movies[Math.floor(Math.random()*movies.length)]
+    const {original_title, overview ,id }=mainMovie
   return (
-    <div>
-        <VideoTitle title={original_title} overview={overview}/>
+    <div className='w-full h-full overflow-hidden  relative'>
+        <VideoTitle title={original_title} overview={overview} id={id}/>
         <VideoBackground id={id}/>
     </div>
   )

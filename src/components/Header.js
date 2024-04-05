@@ -17,7 +17,6 @@ const Header = () => {
   const handleSignOut=()=>{
     signOut(auth).then(() => {
       // Sign-out successful.
-      console.log('signout successfully')
     }).catch((error) => {
       // An error happened.
       navigate('/error')
@@ -46,7 +45,7 @@ const Header = () => {
     <div className=''>
         {path.pathname==='/'&&<img className="xl:w-48 sticky z-40 xsm:top-2 xsm:left-5 xsm:w-32 md:top-1 md:left-3 xl:top-1 xl:left-36" src={NetflixLogo}
          alt="logo" />}
-         {user&&<div className='flex z-40 justify-between w-screen absolute items-center px-4 py-2 bg-gradient-to-b from-black to-transparent'>
+         {user&&<div className='flex z-40 justify-between w-full absolute items-center px-4 py-2 bg-gradient-to-b from-black to-transparent'>
 
                   <img src={NetflixLogo} className='w-36 pl-5' alt="logo" />
                   <div className="p-2 xsm:min-w-14 flex">

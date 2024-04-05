@@ -1,24 +1,23 @@
 import React from 'react'
-import useFetchAndAdd from '../Hooks/useFetchAndAdd'
-import { useDispatch, useSelector } from 'react-redux'
-import { addTrailerVideo } from '../utils/moviesSlice'
+import useAddTrailer from '../Hooks/useAddTrailer'
+import { useSelector } from 'react-redux'
+
 
 const VideoBackground = ({id}) => {
-    const dispatch=useDispatch()
-    // const trailer=useSelector(state=>state.movies.trailerVideo)
-    let results=useFetchAndAdd(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`)
-    if(results===null)return
-    let filterdData=results.filter(video=>video.type='Trailer')
-    console.log(results)
-    let trailer=filterdData.length?filterdData[filterdData.length-1]:results[0]
-    dispatch(addTrailerVideo(trailer))
+    useAddTrailer(id)
+    const trailerVideo=useSelector(state=>state.movies.trailerVideo)
+    if(trailerVideo===null)return
+    const trailer=trailerVideo
   return (
-    <div>
-        <iframe className='w-screen aspect-video' src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1&mute=1`}
+    <div className='w-screen'>
+        <iframe className='w-screen -mt-[5%] -z-20 aspect-video overflow-hidden' src={"https://www.youtube-nocookie.com/embed/"+trailer?.key+"?autoplay=1&loop=1&mute=1&playlist="+trailer?.key}
         title="YouTube video player" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
         gyroscope; picture-in-picture;" 
-        referrerPolicy="strict-origin-when-cross-origin" ></iframe>
+        referrerPolicy="strict-origin-when-cross-origin" 
+        allowFullScreen
+        style={{overflow:'hidden'}}
+        ></iframe>
     </div>
   )
 }

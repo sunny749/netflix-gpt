@@ -32,6 +32,10 @@
 - useing fetch hook we get the results of videos of the first movie and update store
 - and filter the trailer video and embedded the youtube video and make it autoplay 
 - Apply tailwind class to VideoBackground and Videotitle to look awesome 
+- build secondary component
+- build a movielist component
+- build a moviescard component
+- created custom hooks for every movies lists to add that movies to the reduxstore
 # Features
 - Login Page
     - Sign in / Sign up form

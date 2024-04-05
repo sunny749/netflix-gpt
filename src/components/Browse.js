@@ -1,15 +1,20 @@
 import Header from "./Header"
-import useFetchAndAdd from "../Hooks/useFetchAndAdd"
+import useAddMovies from "../Hooks/useAddMovies"
 import MainContainer from "./MainContainer"
 import SecondaryContainer from "./SecondaryContainer"
-import { addNowPlayingMovies } from "../utils/moviesSlice"
-import { useDispatch } from "react-redux"
+import useAddTopRated from "../Hooks/useAddTopRated"
+import useAddPopular from "../Hooks/useAddPopular"
+import useAddTelugu from "../Hooks/useAddTeugu"
+import useAddFavourites from "../Hooks/useAddFavourite"
+import useAddMainMovie from "../Hooks/useAddMainMovie"
 
 const Browse = () => {
-  const dispatch=useDispatch()
-  let results=useFetchAndAdd('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1')
-  dispatch(addNowPlayingMovies(results))
-  if(results===null)return 
+  useAddMovies()
+  useAddMainMovie()
+  useAddTelugu()
+  useAddTopRated()
+  useAddPopular()
+  useAddFavourites()
   return (
     <div>
       <Header />

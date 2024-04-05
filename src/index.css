@@ -18,3 +18,24 @@ select:-webkit-autofill:focus {
 box-shadow: 0 0 0px 1000px rgba(0,0,0, 0.9) inset;
 background-color: black;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
