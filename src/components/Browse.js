@@ -6,20 +6,21 @@ import useAddTopRated from "../Hooks/useAddTopRated"
 import useAddPopular from "../Hooks/useAddPopular"
 import useAddTelugu from "../Hooks/useAddTeugu"
 import useAddFavourites from "../Hooks/useAddFavourite"
-import useAddMainMovie from "../Hooks/useAddMainMovie"
+import { useSelector } from "react-redux"
+import GptSearchPage from "./gptComponents/GptSearchPage"
 
 const Browse = () => {
+  const gptSearch=useSelector(state=>state.gpt.gptSearch)
   useAddMovies()
-  useAddMainMovie()
   useAddTelugu()
   useAddTopRated()
   useAddPopular()
   useAddFavourites()
   return (
-    <div>
+    <div className="w-screen">
       <Header />
-      <MainContainer/>
-      <SecondaryContainer/>
+      {gptSearch?<GptSearchPage />:<><MainContainer/>
+      <SecondaryContainer/></>}
     </div>
   )
 }
