@@ -11,7 +11,7 @@ const MainContainer = () => {
   return (
     <div className='w-full h-full overflow-hidden  relative'>
         <VideoTitle title={original_title} overview={overview} id={id}/>
-        <VideoBackground id={id}/>
+        <VideoBackground title={original_title} id={id}/>
     </div>
   )
 }

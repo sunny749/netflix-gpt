@@ -2,6 +2,7 @@ import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import Browse from './Browse'
 import Login from './Login'
 import Error from './Error'
+import MovieInfo from './MovieInfo'
 
 
 
@@ -14,6 +15,10 @@ const Body = () => {
         {
             path:'browse',
             element:<Browse />
+        },
+        {
+          path:'browse/:movieId',
+          element:<MovieInfo/>
         },
         {
           path:'error',

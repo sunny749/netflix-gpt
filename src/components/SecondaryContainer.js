@@ -3,20 +3,24 @@ import { useSelector } from 'react-redux'
 import MoviesList from './MoviesList'
 
 const SecondaryContainer = () => {
-    const movies=useSelector(state=>state.movies)
-    if(movies.topRated===null)return
-    if(movies.nowPlayingMovies===null)return
-    if(movies.popular===null)return
-    if(movies.telugu===null)return
-    if(movies.favourites===null)return
+    const topRated=useSelector(state=>state.movies.topRated)
+    const nowPlayingMovies=useSelector(state=>state.movies.nowPlayingMovies)
+    const popular=useSelector(state=>state.movies.popular)
+    const telugu=useSelector(state=>state.movies.telugu)
+    const favourites=useSelector(state=>state.movies.favourites)
+    if(topRated===null)return
+    if(nowPlayingMovies===null)return
+    if(popular===null)return
+    if(telugu===null)return
+    if(favourites===null)return
   return (
     <div className='bg-black'>
-        <div className='-mt-[15%] relative z-20'>
-        <MoviesList title={'Now Playing'} movies={movies.nowPlayingMovies}/>
-        <MoviesList title={'Telugu'} movies={movies.telugu}/>
-        <MoviesList title={'Top Rated'} movies={movies.topRated}/>
-        <MoviesList title={'Popular'} movies={movies.popular}/>
-        <MoviesList title={'Favourites'} movies={movies.favourites}/>
+        <div className='sm:-mt-[15%] xsm:-mt-[13%] relative z-20'>
+        <MoviesList title={'Now Playing'} movies={nowPlayingMovies}/>
+        <MoviesList title={'Telugu'} movies={telugu}/>
+        <MoviesList title={'Top Rated'} movies={topRated}/>
+        <MoviesList title={'Popular'} movies={popular}/>
+        <MoviesList title={'Favourites'} movies={favourites}/>
         </div>
     </div>
   )

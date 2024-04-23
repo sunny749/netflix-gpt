@@ -17,7 +17,7 @@ const Browse = () => {
   useAddPopular()
   useAddFavourites()
   return (
-    <div className="w-screen">
+    <div className="w-full xsm:w-[180vw]">
       <Header />
       {gptSearch?<GptSearchPage />:<><MainContainer/>
       <SecondaryContainer/></>}

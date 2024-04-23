@@ -36,6 +36,16 @@
 - build a movielist component
 - build a moviescard component
 - created custom hooks for every movies lists to add that movies to the reduxstore
+- created Gpt search page
+- created Gpt search bar
+- Multi-language feature is added
+- google gemini ai is added
+- when user enter some text and hit the search button then we pass the text to gemini
+- and then get the results from gemini and the search the movies in tmdb and render
+- gpt page is completed
+- created the movie info page and cast list
+- add the env file and memoize the data to avoid the unnessasary renders and api calls
+
 # Features
 - Login Page
     - Sign in / Sign up form

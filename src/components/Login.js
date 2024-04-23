@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import { BackGroundImg, User_Avatar } from '../utils/constants';
+import Footer from './Footer'
 
 const Login = () => {
   const navigate=useNavigate()
@@ -58,7 +59,6 @@ const Login = () => {
       setValid(error)
     if(error.length)return 
     if(signin){
-      console.log('signin page')
       signInWithEmailAndPassword(auth, form['email or phone'][0], form['password'][0])
       .then((userCredential) => {
         // Signed in 
@@ -74,7 +74,6 @@ const Login = () => {
 
     }
     else{
-      console.log('sign up page')
       createUserWithEmailAndPassword(auth, form['email or phone'][0],form['password'][0])
       .then(async(userCredential) => {
         // Signed up 
@@ -85,7 +84,6 @@ const Login = () => {
         }).then(()=>{
           const {uid,email,passowrd,photoURL,displayName} = auth.currentUser;
           dispatch(addUser({uid,email,passowrd,photoURL,displayName}))
-          console.log(user)
         })
         .catch(error=>{
           console.log(error)
